@@ -1,0 +1,90 @@
+<template>
+    <!--
+    <lightning-card title="welcome to LWC">
+        <div class={customstyle}>
+        <div class="slds-var-m-around-medium">
+
+    
+     Welcome Mr.{firstName}<br/>
+    {person.name}<br/>
+    {person.salary}<br/>
+    {person.place}<br/>
+    {person.Position}<br/>
+    {person.Address.district}<br/>
+    {fruit}
+</div>
+</div>
+
+<lightning-input label="enter the name" value={firstName} onchange={handlechange}>
+    
+    
+</lightning-input>
+
+{firstName}
+{peopleee}
+<lightning-button label="Click" onclick={handleclick}></lightning-button>
+<lightning-button label="button 1" name="btn1" onclick={handleclick1}></lightning-button>
+<lightning-button label="button 2" name="btn2" onclick={handleclick1}></lightning-button>
+
+<lightning-button label="array button" name="arr" onclick={handleclickk}></lightning-button>
+
+    </lightning-card>
+
+
+<lightning-card title="welcome to LWC">
+    {peopleee}<br/>
+
+<lightning-button label="array button" name="arr" onclick={handleclickk}></lightning-button>
+</lightning-card>
+
+<template if:true={ischanged}>
+'welcome to kerala'
+</template>
+<template if:false={ischanged}>
+    'Thank you kerala'
+    </template>
+<lightning-card title="welcome to LWC">
+    
+
+<lightning-button label="button" name="Conditionbutton" onclick={handleclick}></lightning-button>
+</lightning-card>
+
+<template for:each={employeeList} for:item="emp">
+    <div key={emp.name}>
+        {emp.name}
+        {emp.salary}
+    </div>
+</template>
+
+<lightning-input label="input" class="names" ></lightning-input>
+<div class="dynamic">
+<p>welcome to para</p>
+<p>welcome</p>
+<p>welcome to TN</p>
+<p>welcome to kerala</p>
+</div>
+<lightning-button label="promise button" name="promisebutton" onclick={handleclick1}></lightning-button>
+
+<lightning-input  data-name1="Hari" label="data attri1"  ></lightning-input>
+<lightning-input  data-name2="dinesh" label="data attri2"  ></lightning-input>
+<lightning-button data-id="mani" label="Attribute"  onclick={handleclick1}></lightning-button>
+-->
+<lightning-card title="Query Selector">
+    <template  for:each={employees} for:item="employee">
+        <div key={employee.Id}>
+            ID:{employee.Id}
+            NAME:{employee.Name}
+            <lightning-input label="Salary" data-id={employee.Id} value={employee.Salary}></lightning-input>
+          <lightning-button label="Select" variant="brand" data-id={employee.Id} data-name={employee.Name} onclick={handleselect} ></lightning-button>
+          
+          <lightning-button label="Clear" variant="brand" data-id={employee.Id} onclick={handleclear} ></lightning-button>
+        
+        </div>
+       </template >
+       <div slot="actions">
+        <lightning-button label="ClearFirst" variant="brand"  onclick={handleclearfirst} ></lightning-button>
+        <lightning-button label="ClearAll" variant="brand"  onclick={handleclearall} ></lightning-button>
+       </div>
+
+</lightning-card>
+</template>
